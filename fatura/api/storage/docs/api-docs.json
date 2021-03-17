@@ -1,0 +1,487 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "title": "Laravel Generator APIs",
+        "version": "1.0.0"
+    },
+    "basePath": "/api/v1",
+    "paths": {
+        "/enderecos": {
+            "get": {
+                "tags": [
+                    "Endereco"
+                ],
+                "summary": "Get a listing of the Enderecos.",
+                "description": "Get all Enderecos",
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "properties": {
+                                "success": {
+                                    "type": "boolean"
+                                },
+                                "data": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/definitions/Endereco"
+                                    }
+                                },
+                                "message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Endereco"
+                ],
+                "summary": "Store a newly created Endereco in storage",
+                "description": "Store Endereco",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "Endereco that should be stored",
+                        "required": false,
+                        "schema": {
+                            "$ref": "#/definitions/Endereco"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "properties": {
+                                "success": {
+                                    "type": "boolean"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/Endereco"
+                                },
+                                "message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/enderecos/{id}": {
+            "get": {
+                "tags": [
+                    "Endereco"
+                ],
+                "summary": "Display the specified Endereco",
+                "description": "Get Endereco",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id of Endereco",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "properties": {
+                                "success": {
+                                    "type": "boolean"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/Endereco"
+                                },
+                                "message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "Endereco"
+                ],
+                "summary": "Update the specified Endereco in storage",
+                "description": "Update Endereco",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id of Endereco",
+                        "required": true,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "Endereco that should be updated",
+                        "required": false,
+                        "schema": {
+                            "$ref": "#/definitions/Endereco"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "properties": {
+                                "success": {
+                                    "type": "boolean"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/Endereco"
+                                },
+                                "message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Endereco"
+                ],
+                "summary": "Remove the specified Endereco from storage",
+                "description": "Delete Endereco",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id of Endereco",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "properties": {
+                                "success": {
+                                    "type": "boolean"
+                                },
+                                "data": {
+                                    "type": "string"
+                                },
+                                "message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/faturas": {
+            "get": {
+                "tags": [
+                    "Fatura"
+                ],
+                "summary": "Get a listing of the Faturas.",
+                "description": "Get all Faturas",
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "properties": {
+                                "success": {
+                                    "type": "boolean"
+                                },
+                                "data": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/definitions/Fatura"
+                                    }
+                                },
+                                "message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Fatura"
+                ],
+                "summary": "Store a newly created Fatura in storage",
+                "description": "Store Fatura",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "Fatura that should be stored",
+                        "required": false,
+                        "schema": {
+                            "$ref": "#/definitions/Fatura"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "properties": {
+                                "success": {
+                                    "type": "boolean"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/Fatura"
+                                },
+                                "message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/faturas/{id}": {
+            "get": {
+                "tags": [
+                    "Fatura"
+                ],
+                "summary": "Display the specified Fatura",
+                "description": "Get Fatura",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id of Fatura",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "properties": {
+                                "success": {
+                                    "type": "boolean"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/Fatura"
+                                },
+                                "message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "Fatura"
+                ],
+                "summary": "Update the specified Fatura in storage",
+                "description": "Update Fatura",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id of Fatura",
+                        "required": true,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "Fatura that should be updated",
+                        "required": false,
+                        "schema": {
+                            "$ref": "#/definitions/Fatura"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "properties": {
+                                "success": {
+                                    "type": "boolean"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/Fatura"
+                                },
+                                "message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Fatura"
+                ],
+                "summary": "Remove the specified Fatura from storage",
+                "description": "Delete Fatura",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id of Fatura",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "properties": {
+                                "success": {
+                                    "type": "boolean"
+                                },
+                                "data": {
+                                    "type": "string"
+                                },
+                                "message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "Endereco": {
+            "required": [
+                "cidade",
+                "bairro",
+                "estado",
+                "cep"
+            ],
+            "properties": {
+                "idEndereco": {
+                    "description": "idEndereco",
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "cidade": {
+                    "description": "cidade",
+                    "type": "string"
+                },
+                "bairro": {
+                    "description": "bairro",
+                    "type": "string"
+                },
+                "estado": {
+                    "description": "estado",
+                    "type": "string"
+                },
+                "cep": {
+                    "description": "cep",
+                    "type": "string"
+                }
+            }
+        },
+        "Fatura": {
+            "required": [
+                "cpf",
+                "dataVencimento",
+                "dataLeitura",
+                "valorLeitura",
+                "valorConta",
+                "idEndereco"
+            ],
+            "properties": {
+                "idFatura": {
+                    "description": "idFatura",
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "cpf": {
+                    "description": "cpf",
+                    "type": "string"
+                },
+                "dataVencimento": {
+                    "description": "dataVencimento",
+                    "type": "string",
+                    "format": "date"
+                },
+                "dataLeitura": {
+                    "description": "dataLeitura",
+                    "type": "string",
+                    "format": "date"
+                },
+                "valorLeitura": {
+                    "description": "valorLeitura",
+                    "type": "number",
+                    "format": "number"
+                },
+                "valorConta": {
+                    "description": "valorConta",
+                    "type": "number",
+                    "format": "number"
+                },
+                "idEndereco": {
+                    "description": "idEndereco",
+                    "type": "integer",
+                    "format": "int32"
+                }
+            }
+        }
+    }
+}

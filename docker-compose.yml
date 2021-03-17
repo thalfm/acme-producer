@@ -1,0 +1,44 @@
+version: "3.1"
+
+services:
+  acme-cliente:
+    build:
+      dockerfile: Dockerfile
+      context: ./cliente
+    image: thalfm/acme-cliente
+    container_name: acme-cliente
+    volumes:
+      - ./cliente/nginx/default:/etc/nginx/sites-available/default
+    ports:
+      - 8000:80
+    networks:
+      - acme
+
+  acme-fatura:
+    build:
+      dockerfile: Dockerfile
+      context: ./fatura
+    image: thalfm/acme-fatura
+    container_name: acme-fatura
+    volumes:
+      - ./fatura/nginx/default:/etc/nginx/sites-available/default
+    ports:
+      - 8001:80
+    networks:
+      - acme
+
+  acme-instalacao:
+    build:
+      dockerfile: Dockerfile
+      context: ./instalacao
+    image: thalfm/acme-instalacao
+    container_name: acme-instalacao
+    volumes:
+      - ./instalacao/nginx/default:/etc/nginx/sites-available/default
+    ports:
+      - 8002:80
+    networks:
+      - acme
+networks:
+  acme:
+    driver: bridge
